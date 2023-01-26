@@ -2,7 +2,7 @@ import argparse
 from PIL import Image
 import board
 import neopixel
-
+from time import sleep
 
 # Parse those command line args
 parser = argparse.ArgumentParser()
@@ -28,6 +28,7 @@ def write_strips(data):
     for i in range(data.length()):
         strip[0:0] = i
         strip.show()
+        sleep(2)
 
 if __name__ == '__main__':
     strips = process_image(args.image)
