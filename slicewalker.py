@@ -1,7 +1,7 @@
 import argparse
 from PIL import Image
-import board
-import neopixel
+# import board
+# import neopixel
 from time import sleep
 
 # Parse those command line args
@@ -25,17 +25,17 @@ def process_image(image):
 
 def write_strips(data):
     strip = neopixel.NeoPixel(board.D18, 60)
-    strip = []
+    # strip = []
     for i in range(len(data)):
         for j in range(len(data[i])):
             strip[j] = data[i][j]
-        # print(strip)
+        print(strip)
         strip.show()
         # pass
-        sleep(2)
+        # sleep(2)
 
 if __name__ == '__main__':
     strips = process_image(args.image)
     # print(strips)
-    print(len(strips))
     write_strips(strips)
+    print(len(strips))
