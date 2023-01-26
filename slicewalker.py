@@ -27,8 +27,8 @@ def write_strips(data):
     strip = neopixel.NeoPixel(board.D18, 60)
     strip = []
     for i in range(len(data)):
-        # for j in range(len(data[i])):
-        strip[0:0] = data[i]
+        for j in range(len(data[i])):
+            strip[j] = data[i][j]
         # print(strip)
         strip.show()
         # pass
